@@ -1,0 +1,57 @@
+attendance_summary.html
+
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h2>Attendance Summary Report</h2>
+
+<table
+    id="attendance_summary_table"
+    class="table table-bordered table-striped mt-4"
+>
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>Date</th>
+            <th>Total Records</th>
+            <th>Present</th>
+            <th>Absent</th>
+            <th>Leave</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for record in attendance_summary_records %}
+
+        <tr>
+
+            <td>{{ record.attendance_date }}</td>
+
+            <td>{{ record.total_records }}</td>
+
+            <td>{{ record.total_present }}</td>
+
+            <td>{{ record.total_absent }}</td>
+
+            <td>{{ record.total_leave }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

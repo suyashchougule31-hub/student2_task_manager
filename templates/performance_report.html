@@ -1,0 +1,83 @@
+performance_report.html
+
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h2>Student Performance Report</h2>
+
+<table
+    id="performance_table"
+    class="table table-bordered table-striped mt-4"
+>
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Total Tasks</th>
+            <th>Total Marks</th>
+            <th>Average Marks</th>
+            <th>Submitted Tasks</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for record in performance_records %}
+
+        <tr>
+
+            <td>{{ record.student_id }}</td>
+
+            <td>
+                {{ record.first_name }}
+                {{ record.last_name }}
+            </td>
+
+            <td>{{ record.course_name }}</td>
+
+            <td>{{ record.total_tasks }}</td>
+
+            <td>
+
+                {% if record.total_marks %}
+                    {{ record.total_marks }}
+                {% else %}
+                    0
+                {% endif %}
+
+            </td>
+
+            <td>
+
+                {% if record.average_marks %}
+                    {{ "%.2f"|format(record.average_marks) }}
+                {% else %}
+                    0
+                {% endif %}
+
+            </td>
+
+            <td>{{ record.submitted_tasks }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+
+{% endblock %}

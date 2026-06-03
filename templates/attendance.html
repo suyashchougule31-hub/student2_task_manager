@@ -1,0 +1,39 @@
+<h2> Mark Attendance</h2>
+<form action="/save_attendance" method="post">
+    
+    <label>Students</label>
+    
+    <select name="student_id" class="form-control">
+       
+        {% for student in students %}
+         
+        <option value="{{ student.id }}">
+            {{ student.first_name }} {{ student.last_name }}
+        </option>
+        
+        {% endfor %}
+
+    </select>
+    
+    <br><br>   
+   
+    <label>Status</label>
+
+    <select name="attendance_status">
+        <option value="present">
+            Present
+        </option>
+
+        <option value="absent">
+            Absent
+        </option>
+
+    </select>
+    
+    <br><br>
+    <button type="submit">
+        Submit
+    </button>
+</form>
+
+    

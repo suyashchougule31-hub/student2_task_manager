@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Student Tasks report</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Student</th>
+            <th>Task</th>
+            <th>Marks</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for record in task_records %}
+        <tr>
+            <td>{{ record.student_task_id }}</td>
+
+            <td>{{ record.first_name }} 
+                {{ record.last_name }}</td>
+
+            <td>{{record.task_name }}</td>
+            <td>{{ record.obtained_marks }}</td>
+            <td>{{ record.submission_date }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+
+<h1>Dashboard</h1>
+
+<div class="row mt-4">
+
+    <!-- Total Students -->
+    <div class="col-md-3">
+        <div class="card text-white bg-primary">
+            <div class="card-body">
+                <h5>Total Students</h5>
+                <h2>{{ total_students }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Total Tasks -->
+    <div class="col-md-3">
+        <div class="card text-white bg-success">
+            <div class="card-body">
+                <h5>Total Tasks</h5>
+                <h2>{{ total_tasks }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attendance Records -->
+    <div class="col-md-3">
+        <div class="card text-white bg-warning">
+            <div class="card-body">
+                <h5>Attendance Records</h5>
+                <h2>{{ total_attendance }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task Assignments -->
+    <div class="col-md-3">
+        <div class="card text-white bg-danger">
+            <div class="card-body">
+                <h5>Task Assignments</h5>
+                <h2>{{ total_assignments }}</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h4>Student Task Manager</h4>
+            <p>
+                Flask + MySQL Backend Application
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
